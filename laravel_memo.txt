@@ -1,0 +1,11 @@
+MVCモデルについて
+
+M = Model
+V = View
+C = Controller
+
+それぞれに役割がある。
+
+Model = DB周り(テーブルのリレーションやどんなカラムを引っ張ってくるか)
+View = ページの見た目(UI、htmlの部分)
+Controller = SQLを使う(普段htmlの上に書いていたphpの部分)
