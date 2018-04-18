@@ -9,3 +9,15 @@ C = Controller
 Model = DB周り(テーブルのリレーションやどんなカラムを引っ張ってくるか)
 View = ページの見た目(UI、htmlの部分)
 Controller = SQLを使う(普段htmlの上に書いていたphpの部分)
+
+-------------------------------------------------------
+tweetsテーブルを例に命名規則
+
+Controller名(複数形)
+TweetsController.php
+
+Model名(単数形)
+Tweet.php
+
+View名(テーブル名ディレクトリ)
+tweets/アクションメソッド名.blade.php
