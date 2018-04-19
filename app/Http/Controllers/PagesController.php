@@ -16,7 +16,7 @@ class PagesController extends Controller
     	return view('index');
     }
 
-    public function about(Request $request) {
+    public function about() {
 
     	// 配列に値をセット
         $data = array();

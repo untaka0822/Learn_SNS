@@ -21,3 +21,37 @@ Tweet.php
 
 View名(テーブル名ディレクトリ)
 tweets/アクションメソッド名.blade.php
+
+------------------------------------------------------
+DB接続(XAMPP環境下の場合)
+
+DB_HOST=localhost
+DB_DATABASE=Learn_SNS
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+migrateがうまく動かない時に記述
+
+// .env
+DB_SOCKET=/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
+
+// config/database.php
+'unix_socket'   => env('DB_SOCKET', null),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
