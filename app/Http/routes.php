@@ -23,6 +23,7 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('/contact', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
+Route::get('/tweets', 'TweetsController@index');
 
 
 

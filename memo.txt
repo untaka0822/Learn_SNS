@@ -1,0 +1,45 @@
+①itermでcd ~でLearn_SNSディレクトに移動
+②php artisan serveコマンドでLaravelのビルドサーバーを立ち上げる
+③ブラウザ上でlocalhost:8000というリクエストができる
+
+命名規則
+Table名 → 複数形 tweets
+Controller名 → 複数形Controller.php TweetsController.php
+    クラス名にはファイル名と同じ文字列が使われる
+Model名 → 単数形 Tweet.php
+    クラス名にはファイル名と同じ文字列が使われる
+View名 → viewsディレクトリ上に複数形のディレクトリを作成し、その中にメソッド名.blade.phpという名前のファイルを用意する
+
+
+アクションメソッド（データ操作４原則CRUD処理を元にそれを７つのメソッドに分解したもの）
+
+Create（作成）
+- create（画面表示）
+- store（作成処理）
+Read（読込）
+- index（一覧表示）
+- show（詳細）
+Update（更新）
+- edit（画面表示）
+- update（更新処理）
+Delete（削除）
+- destroy（削除処理）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

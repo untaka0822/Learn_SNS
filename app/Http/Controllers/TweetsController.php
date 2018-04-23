@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 class TweetsController extends Controller
 {
     public function index() {
-        // この中にSQLを書いていく
-        
+        // tweetsから一覧画面を表示する
     }
 }
