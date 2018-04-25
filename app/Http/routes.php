@@ -24,6 +24,8 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/contact', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/tweets', 'TweetsController@index');
+Route::get('/tweets/{tweet_id}', 'TweetsController@show');
+// $tweet_id = 1;
 
 
 
