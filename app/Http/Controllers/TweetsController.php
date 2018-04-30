@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Tweet;
 // namespaceという機能がPHPには存在する
 // namespaceで定義した名前をuseで呼び出せる
+use Carbon\Carbon; // 日付データライブラリ
 
 class TweetsController extends Controller
 {
@@ -47,6 +48,46 @@ class TweetsController extends Controller
         // firstなので、取得した１番最初のデータのみ配列化する
 
         return view('tweets.show', compact('tweet'));
+    }
+
+    public function create() {
+        return view('tweets.create');
+    }
+
+    public function store(Request $request) {
+        // $requst = new Request();↑インスタンス化してるのと同じ
+
+        // バリデーション
+        $rules = ['tweet' => 'required|min:2'];
+        $this->validate($request, $rules); // もしエラーがあった場合は自動的にcreate（前の画面）に戻る
+        
+        // POSTデータ受け取って（$_POST / $_REQUEST→$_GET,$_POST）
+        $post = $request->all();
+
+        // データベースに登録し
+        $now = Carbon::now();
+        $data = ['tweet'=> $post['tweet'],
+                 'member_id'=> $post['member_id'],
+                 'reply_tweet_id'=> 0,
+                 'delete_flag'=> 0,
+                 'create_at'=> $now
+                ];
+        Tweet::create($data);
+        // INSERT INTO tweets SET tweet=?, member_id=?, reply_tweet_id=?, delete_flag=?, create_at=NOW()
+
+        // 必要なページに遷移
+        return redirect('tweets'); // header()と同じようなもの
+    }
+
+    public function destroy($tweet_id) {
+        $tweet = Tweet::where('tweet_id','=',$tweet_id);
+        $tweet->delete();
+        // DELETE FROM tweets WHERE tweet_id=?
+        \Session::flash('delete_message', '削除しました。');
+        // flash('キー', '値'); ←表示側で使う
+        // $_SESSION['delete_message'] = '削除しました。';
+
+        return redirect('tweets');
     }
 
 

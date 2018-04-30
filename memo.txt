@@ -25,7 +25,15 @@ Update（更新）
 Delete（削除）
 - destroy（削除処理）
 
-
+RESTfulなURL設計
+CRUD → アクションメソッド
+index    GET    tweets
+show     GET    tweets/{id}
+create   GET    tweets/create
+store    POST   tweets
+edit     GET    tweets/{id}/edit
+update   PATCH  tweets/{id}
+destroy  DELETE tweets/{id}
 
 
 

@@ -20,12 +20,24 @@
 
 // get = formのGET送信と同じ post = POST送信と同じ
 // ('リクエストURL', '対応するコントローラー@対応するメソッド');
-Route::get('/', 'WelcomeController@index');
+Route::get('/timeline', 'TweetsController@index');
 Route::get('/contact', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
+
 Route::get('/tweets', 'TweetsController@index');
+Route::get('/tweets/create', 'TweetsController@create');
 Route::get('/tweets/{tweet_id}', 'TweetsController@show');
 // $tweet_id = 1;
+Route::post('/tweets', 'TweetsController@store');
+// RESTfulなURL設計
+
+Route::delete('/tweets/{tweet_id}', 'TweetsController@destroy');
+
+
+
+
+
+
 
 
 
